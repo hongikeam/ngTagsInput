@@ -117,6 +117,7 @@ tagsInput.directive('tagsInput', function($timeout, $document, tagsInputConfig) 
         require: 'ngModel',
         scope: {
             tags: '=ngModel',
+            ngDisabled: '=?',
             onTagAdded: '&',
             onTagRemoved: '&'
         },
@@ -144,7 +145,8 @@ tagsInput.directive('tagsInput', function($timeout, $document, tagsInputConfig) 
                 maxTags: [Number, MAX_SAFE_INTEGER],
                 displayProperty: [String, 'text'],
                 allowLeftoverText: [Boolean, false],
-                addFromAutocompleteOnly: [Boolean, false]
+                addFromAutocompleteOnly: [Boolean, false],
+                disabled: [Boolean, false]
             });
 
             $scope.tagList = new TagList($scope.options, $scope.events);

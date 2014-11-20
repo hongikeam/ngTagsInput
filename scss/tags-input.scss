@@ -18,6 +18,9 @@ tags-input {
       outline: none;
       @include box-shadow($tags-outline-box-shadow);
     }
+    &.disabled {
+      background-color: #eee;
+    }
 
     .tag-list {
       margin: 0;
@@ -69,6 +72,9 @@ tags-input {
 
       &.invalid-tag {
         color: $tag-color-invalid;
+      }
+      &.disabled {
+        background-color: #eee;
       }
 
       &::-ms-clear {
